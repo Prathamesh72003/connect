@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp Screen</title>
+    <title>Login Screen</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -73,7 +73,7 @@
 
 
         .img {
-            height: 80%;
+            height: 60%;
             width: 100%;
         }
 
@@ -146,7 +146,19 @@
             align-items: center;
         }
 
-    
+        .login {
+            width: 35%;
+            height: 40px;
+            border-radius: 40px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: #EFAA86;
+            outline: none;
+        }
+
         .login_link {
             display: flex;
             justify-content: center;
@@ -157,7 +169,7 @@
         a:hover{
             color: #EFAA86;
         }
-        .signup{
+        .login{
             width: 35%;
             height: 40px;
             border-radius: 40px;
@@ -176,7 +188,7 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        .signup:hover {
+        .login:hover {
             background-color: #EFAA86;
             box-shadow: 0px 10px 70px #EFAA86;
             color: #fff;
@@ -187,54 +199,32 @@
 
 <body>
     <div class="main-container">
-
         <div class="container">
-
             <div class="float-left left">
-
                 <div class="heading">
-                    <h3 class="heading_text">Create Acconut</h3>
+                    <h3 class="heading_text">Welcome Back!!</h3>
                     <p class="sub_text">Chat with your loved ones!</p>
                 </div>
-
-                <form method="post" class="form" action="./login.html">
-                    <div class="input_holder">
-                        <div class="first" style="display: flex; flex-direction: row;">
-                            <div class="input-container">
-                                <i class="fa fa-user iconss"></i>
-                                <input class="input" type="text" placeholder="Username" name="username" required />
-                            </div>
-
-                            <div class="input-container">
-                                <i class="fa fa-envelope iconss"></i>
-                                <input class="input" type="text" placeholder="Your email" name="email" required />
-                            </div>
+                <form method="post" class="form"> <div class="input_holder">
+                        <div class="input-container">
+                            <i class="fa fa-user iconss"></i>
+                            <input class="input" type="text" placeholder="Username" name="username" required />
                         </div>
-
-                        <div class="second" style="display: flex; flex-direction: row;">
-                            <div class="input-container">
-                                <i class="fa fa-phone iconss"></i>
-                                <input class="input" type="text" placeholder="Your Phone number" name="number"
-                                    required />
-                            </div>
-                            <div class="input-container">
-                                <i class="fa fa-lock iconss"></i>
-                                <input class="input" type="text" id="password" placeholder="Password" name="password"
-                                    required />
-                            </div>
+                        <div class="input-container">
+                            <i class="fa fa-lock iconss"></i>
+                            <input class="input" type="password" placeholder="Your password" name="password" required />
                         </div>
                     </div>
                     <div class="btn_container">
-                       <input type="submit" class="signup" value="Sign Up"/>
+                       <input type="submit" class="login" value="Login"/>
                     </div>
-
                     <div class="login_link">
-                        <p class="already_text" style="color: white;">Already an user? <a href="./login.html">Login</a></p>
+                        <p class="already_text" style="color: white;">New here? <a href="./signup.html">Sign Up</a></p>
                     </div>
                 </form>
-            </div> <div class="float-right right">
-                <img src="./assets/signup.png" alt="" class="img">
+            </div>
+            <div class="float-right right">
+                <img src="./assets/login.png" alt="" class="img">
             </div>
 </body>
-
 </html>

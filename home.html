@@ -1,338 +1,395 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        <title>Chatting App</title>
-        <!-- <link rel="stylesheet" href="style.css"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Chatting App</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
-        <!-- Emojis -->
-        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-        <style>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Emojis -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
         /* width */
         ::-webkit-scrollbar {
-        width: 5px;
+            width: 0px;
         }
 
         /* Track */
         ::-webkit-scrollbar-track {
-        background: #f1f1f1;
+            background: #f1f1f1;
         }
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-        background: #888;
+            background: #888;
         }
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-        background: #555;
+            background: #555;
         }
-            body{
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .container{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 10px;
-            }
-            
-            .column{
-                /* margin-top: 20px; */
-                height: 95vh;
-                padding: 20px;       
-            }
 
-            .left{
-                width: 25%;
-            }
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(#cbcbf4, #fff);
+            background-repeat: no-repeat;
+             background-size:cover;
+        }
 
-            .right{
-                width: 75%;
-            }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background-color: #4e426d;
+            box-shadow: 5px 10px 18px #888 ;
+        }
 
-            .profile_name{
-                margin: 0px;
-                font-size: 15px;
-            }
-            .profile{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-            }
-            .details{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                /* align-items: center; */
-                padding: 20px;
-            }
+        .column {
+            /* margin-top: 20px; */
+            height: 95vh;
+            padding: 20px;
+        }
 
-            .container_lite{
-                border-radius: 10px;
-            }
-            .users{
-                display: flex;
-                height: 410px;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                overflow-y: scroll;
-                overflow-x: hidden;
-                padding: 5px;
-                padding-top: 100px;
-                background-color: beige;
-                border-radius: 10px;               
-            }
-            .user{
-                width: 235px;
-                display: flex;
-                justify-self: center;
-                align-items: center;
-                box-shadow: 5px 2px #888888;
-            }
+        .left {
+            border-radius: 10px 0px 0px 10px;
+            width: 27%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #4e426d;
 
-            .user_name{
-                margin: 0px;
-            }
+        }
 
-            .user_details{
-                margin-left: 10px;
-                /* padding: 0px; */
-            }
-            .user_chat{
-                height: 90px;
-                border-radius: 10px;
-                background-color: floralwhite;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-            }
+        .right {
+            border-radius: 0px 10px 10px 0px;
+            background-color: #fcfdfb;
+            width: 75%;
+            background-color: #4e426d;
+        }
 
-            .msg{
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                width: 150px;
-            }
-            .chatting_screen{
-                display: flex;
-                flex-direction: column;
-                margin-top: 0px; 
-                height: 450px;
-                background-color: floralwhite;
-                border-radius: 10px;
-            }
+        .profile_name {
+            margin: 0px;
+            font-size: 15px;
+            font-weight: bold;
+        }
 
-            .chat{
-                /* display: flex; */
-                background-color: rgb(116, 72, 14);
-                height: 425px;
-                width: 100%;
-                padding: 15px;
-                overflow-y: scroll;
-               
-            }
-           
-            .sender_msg{
-                /* flex-wrap: wrap; */
-                display: flex;
-                /* height: 40px;
-                margin-left: auto;
-                /* align-self: flex-start; */
-                margin-bottom: 10px;
-                
+        .email {
+            opacity: 0.5;
+            color: white;
+        }
 
-            }
+        .profile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            background-color: #5c4f81;
+            border-radius: 50px;
+            padding: 10px;
+            margin-top: 8px;
+        }
 
-            .sender_details{
-                margin-left: auto;
-                max-width: calc(100% - 250px);
-                background-color: black;
-                border-radius: 20px 20px 0px 20px;
-                padding: 10px;
-                padding-bottom: 0px;
-            }
+        .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            /* align-items: center; */
+            padding-left: 20px;
+        }
 
-            .sender_details p{
-                
-                color: white;
-            }
-            .receiver_msg{
-                display: flex;
-                margin-bottom: 10px;
-            }
+        .container_lite {
+            border-radius: 10px;
+        }
 
-            .receiver_details{
-                margin-right: auto;
-                max-width: calc(100% - 250px);
-                background-color: black;
-                border-radius: 20px 20px 20px 0px;
-                padding: 10px;
-                padding-bottom: 0px;
-            }
+        .search {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-            .receiver_details p{
-                
-                color: white;
-            }
-            
-        </style>
-    </head>
-    <body>
-        
-        <div class="container">
-            <div class="column left" style="background-color: rgb(150, 146, 146);">
-                <div class="profile">
-                    <img src="./assets/me.jpeg" alt="" class="img-circle" style="width: 60px; height: 60px;">
-                    <div class="details">
-                        <p class="profile_name">Praaj</p>
-                        <p class="email">official.sasp@gmail.com</p>
-                    </div>
-                </div>
-                <div class="container_lite" style="background-color: rgb(175, 175, 175); height: 450px;" >
-                    <div class="search" style="padding: 5px;">
-                        <form>
-                            <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Search">
-                              <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                  <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                              </div>
-                            </div>
-                          </form>
-                    </div>
-                    <div class="users">
-                        <div class="user">
-                            <img src="./assets/user1.jpeg" alt="" class="img-circle" style="width: 70px; height: 70px; padding: 10px;" >
-                            <div class="user_details">
-                                <p class="user_name">Sidso</p>
-                                <p class="msg">This is default message wedbewyjbwe</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <img src="./assets/user1.jpeg" alt="" class="img-circle" style="width: 70px; height: 70px; padding: 10px;" >
-                            <div class="user_details">
-                                <p class="user_name">Sidso</p>
-                                <p class="msg">This is default message wedbewyjbwe</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <img src="./assets/user1.jpeg" alt="" class="img-circle" style="width: 70px; height: 70px; padding: 10px;" >
-                            <div class="user_details">
-                                <p class="user_name">Sidso</p>
-                                <p class="msg">This is default message wedbewyjbwe</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <img src="./assets/user1.jpeg" alt="" class="img-circle" style="width: 70px; height: 70px; padding: 10px;" >
-                            <div class="user_details">
-                                <p class="user_name">Sidso</p>
-                                <p class="msg">This is default message wedbewyjbwe</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <img src="./assets/user1.jpeg" alt="" class="img-circle" style="width: 70px; height: 70px; padding: 10px;" >
-                            <div class="user_details">
-                                <p class="user_name">Sidso</p>
-                                <p class="msg">This is default message wedbewyjbwe</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <img src="./assets/user1.jpeg" alt="" class="img-circle" style="width: 70px; height: 70px; padding: 10px;" >
-                            <div class="user_details">
-                                <p class="user_name">Sidso</p>
-                                <p class="msg">This is default message wedbewyjbwe</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <img src="./assets/user1.jpeg" alt="" class="img-circle" style="width: 70px; height: 70px; padding: 10px;" >
-                            <div class="user_details">
-                                <p class="user_name">Sidso</p>
-                                <p class="msg">This is default message wedbewyjbwe</p>
-                            </div>
-                        </div>
-                    </div>    
+        .search_input {
+            background-color: #5C4F81;
+            border-radius: 50px 0px 0px 50px;
+            border-color: #5C4F81;
+            color: white;
+        }
+
+        .search_icon {
+            background-color: #5C4F81;
+            border-radius: 0px 50px 50px 0px;
+            outline: none;
+            border-color: #5C4F81;
+        }
+
+        .users {
+            display: flex;
+            height: 345px;
+            /* justify-content: center; */
+            /* align-items: center; */
+            flex-direction: column;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding: 5px;
+            background-color: #5c4f81;
+            border-radius: 10px;
+        }
+
+        .user {
+            width: 235px;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            border-bottom: 1px solid grey;
+        }
+
+        .logout_btn{
+            width: 50%;
+            height: 40px;
+            border-radius: 40px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: white;
+            font-size: 21px;
+            font-weight: 600;
+            background-color: #EFAA86;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .logout_btn:hover {
+            background-color: #EFAA86;
+            box-shadow: 0px 10px 40px #EFAA86;
+            color: #fff;
+            transform: translateY(-7px);
+        }
+        .user_name {
+            margin: 0px;
+            color: white;
+        }
+
+
+        .user_img {
+            width: 70px;
+            height: 70px;
+            padding: 10px;
+        }
+
+        .user_details {
+            margin-left: 10px;
+            color: whitesmoke;
+            /* padding: 0px; */
+        }
+
+        .user_chat {
+            height: 80px;
+            border-radius: 40px 40px 0px 0px;
+            background-color: #3c2f5f;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 0px;
+            margin-top: -12px;
+        }
+
+        .msg {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 150px;
+            opacity: 0.5;
+        }
+
+        .chatting_screen {
+            display: flex;
+            flex-direction: column;
+            margin-top: 0px;
+            height: 470px;
+            background-color: #5C4F81;
+            border-radius: 0px 0px 40px 40px;
+        }
+
+        .chat {
+            /* display: flex; */
+            background-color: #5C4F81;
+            height: 450px;
+            width: 100%;
+            padding: 15px;
+            overflow-y: scroll;
+            border-radius: 50px;
+
+        }
+
+        .sender_msg {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .sender_details {
+            margin-left: auto;
+            max-width: calc(100% - 250px);
+            background-color: #efaa86;
+            border-radius: 20px 20px 0px 20px;
+            padding: 10px;
+            padding-bottom: 0px;
+        }
+
+        .sender_details p {
+            color: white;
+        }
+
+        .time {
+            text-align: right;
+            opacity: 0.5;
+            color: white;
+        }
+
+        .receiver_msg {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .receiver_details {
+            margin-right: auto;
+            max-width: calc(100% - 250px);
+            background-color: #4E426D;
+            border-radius: 20px 20px 20px 0px;
+            padding: 10px;
+            padding-bottom: 0px;
+        }
+
+        .receiver_details p {
+            color: white;
+        }
+
+        .message{
+            position: relative;
+            bottom: 10px;
+            display: inline-flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .message .input-group{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            /* display: inline-flex; */
+        }
+
+        .message .input-group .form-control{
+            border-radius: 20px;
+            width: 90%;
+            height: 45px;
+        }
+        .send_icon{
+            border-radius: 50px;
+            width: 45px;
+            height: 45px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="column left">
+            <div class="profile">
+                <img src="./assets/me.jpeg" alt="" class="img-circle" style="width: 60px; height: 60px;">
+                <div class="details">
+                    <p class="profile_name">Praaj</p>
+                    <p class="email">official.sasp@gmail.com</p>
                 </div>
             </div>
-            <div class=" column right" style="background-color: rgb(226, 226, 253);">
-                <div class="user_chat">
-                        <img src="./assets/user1.jpeg" alt="" class="img-circle" style="width: 60px; height: 60px; margin-left: 10px; margin-right: 10px;">
-                            <div class="user_input"     >
-                                <p class="user_name">Sidso</p>
-                                 <p class="email">book4u.sasp@gmail.com</p>
-                            </div>   
+            <div class="container_lite">
+                <div class="search" style="padding: 5px;">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control search_input" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default search_icon" type="submit">
+                                    <i class="glyphicon glyphicon-search" style="color: white;"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="chatting_screen">
-                    <div class="chat">
-                        <div class="sender_msg">
-                            <div class="sender_details">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                                <p style="text-align: right; opacity: 0.5;">4:07</p> 
-                            </div>
-                            
+                <div class="users">
+                    <div class="user">
+                        <img src="./assets/user1.jpeg" alt="" class="img-circle user_img">
+                        <div class="user_details">
+                            <p class="user_name">Sidso</p>
+                            <p class="msg">This is default message wedbewyjbwe</p>
                         </div>
-                        <div class="sender_msg">
-                            <div class="sender_details">
-                                <p>Lorem Ipsum is 00s</p>
-                                <p style="text-align: right; opacity: 0.5;">4:07</p> 
-                            </div>
+                    </div>
+                </div>
+            </div>
+            <button class="logout_btn"><a href="./login.html" style="text-decoration: none; color: white;">LogOut</a></button>
+        </div>
+        <div class=" column right">
+            <div class="user_chat">
+                <img src="./assets/user1.jpeg" alt="" class="img-circle"
+                    style="width: 60px; height: 60px; margin-left: 10px; margin-right: 10px;">
+                <div class="user_input">
+                    <p class="user_name">Sidso</p>
+                    <p class="email">book4u.sasp@gmail.com</p>
+                </div>
+            </div>
+            <div class="chatting_screen">
+                <div class="chat">
+                    <div class="sender_msg">
+                        <div class="sender_details">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s</p>
+                            <p class="time">4:07</p>
                         </div>
-                        <div class="sender_msg">
-                            <div class="sender_details">
-                                <p>Lorem Ipsum is 00s</p>
-                                <p style="text-align: right; opacity: 0.5;">4:07</p> 
-                            </div>
-                        </div>
-                        <div class="receiver_msg">
-                                <div class="receiver_details">
-                                    <p>Lorem Ipsum is 00s</p>
-                                    <p style="text-align: right; opacity: 0.5;">4:07</p> 
-                            </div>
-                        </div>
-                        <div class="receiver_msg">
-                            <div class="receiver_details">
-                                <p>Lorem Ipsum is 00s</p>
-                                <p style="text-align: right; opacity: 0.5;">4:07</p> 
-                        </div>
+
                     </div>
                     <div class="receiver_msg">
                         <div class="receiver_details">
                             <p>Lorem Ipsum is 00s</p>
-                            <p style="text-align: right; opacity: 0.5;">4:07</p> 
+                            <p class="time">4:07</p>
+                        </div>
                     </div>
                 </div>
-                    </div>
-                    <div class="message">
-                        <form>
-                            <div class="input-group" id="mytextarea">
-                              <input type="text" class="form-control" placeholder="Type your message" style="border-radius: 20px 0px 0px 20px;">
-                              <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                  <i class="glyphicon glyphicon-send"></i>
+                <!-- <div class="message"> -->
+                    <form class="message">
+                        <div class="input-group" id="mytextarea">
+                            <input type="text" class="form-control" placeholder="Type your message">
+                            <!-- <div class="input-group-btn"> -->
+                                <button class="btn btn-default send_icon" type="submit">
+                                    <i class="glyphicon glyphicon-send"></i>
                                 </button>
-                              </div>
-                            </div>
-                          </form>
-                    </div>
-                </div>
+                            <!-- </div> -->
+                        </div>
+                    </form>
+                <!-- </div> -->
             </div>
         </div>
-    </body>
+    </div>
+    </div>
+</body>
+
 </html>

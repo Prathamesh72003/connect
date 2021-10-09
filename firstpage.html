@@ -95,70 +95,65 @@
             opacity: 0.5;
         }
 
-        .form {
+        .all_subtext {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0px;
             height: 80%;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
+            padding-bottom: 30px;
+            /* border: 2px solid blue; */
         }
 
-        .input_holder {
+
+        .subtext {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left_subtext {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
-
-        .input-container {
-
-            display: flex;
-            margin: 25px;
-            margin-top: auto;
+            /* border: 1px solid black; */
             width: 50%;
-            height: 40px;
-            border-radius: 50px;
-            background-color: white;
+            height: 100%;
+            padding: 20px;
         }
 
+        .p_left_subtext{
+            font-size: 13px;
+            color: #fff;
+           text-align: center;
+        }
 
-        .iconss {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: black;
-            width: 50px;
+        .p_right_subtext{
+            font-size: 13px;
+            color: #fff;
             text-align: center;
         }
-
-        .input {
-            width: 100%;
-            align-items: center;
-            border: none;
-            outline: none;
-            border-radius: 50px;
-        }
-
-        .btn_container {
+        .right_subtext {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            /* border: 1px solid black; */
+            width: 50%;
+            height: 100%;
+            padding: 20px;
         }
 
-    
-        .login_link {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 0;
+        .btn_container{
+            padding-top: 15px;
+
         }
 
-        a:hover{
-            color: #EFAA86;
-        }
-        .signup{
-            width: 35%;
+        .btn{
+            width: 120%;
             height: 40px;
             border-radius: 40px;
             margin-top: 20px;
@@ -176,7 +171,7 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        .signup:hover {
+        .btn:hover {
             background-color: #EFAA86;
             box-shadow: 0px 10px 70px #EFAA86;
             color: #fff;
@@ -187,53 +182,32 @@
 
 <body>
     <div class="main-container">
-
         <div class="container">
-
             <div class="float-left left">
-
                 <div class="heading">
-                    <h3 class="heading_text">Create Acconut</h3>
-                    <p class="sub_text">Chat with your loved ones!</p>
+                    <h3 class="heading_text">Welcome to Connect</h3>
+                    <p class="sub_text">Experience a totally new way to share today!</p>
                 </div>
-
-                <form method="post" class="form" action="./login.html">
-                    <div class="input_holder">
-                        <div class="first" style="display: flex; flex-direction: row;">
-                            <div class="input-container">
-                                <i class="fa fa-user iconss"></i>
-                                <input class="input" type="text" placeholder="Username" name="username" required />
-                            </div>
-
-                            <div class="input-container">
-                                <i class="fa fa-envelope iconss"></i>
-                                <input class="input" type="text" placeholder="Your email" name="email" required />
-                            </div>
+                <div class="all_subtext">
+                    <div class="left_subtext">
+                        <p class="subtext p_left_subtext">Welcome back user, glad to see you again. We hope you are enjoying your time on Connect. Click on below button to resume your chat.
+                        </p>
+                        <div class="btn_container">
+                            <button class="btn"><a href="./login.html" style="text-decoration: none; color: white;">Login</a></button>
                         </div>
-
-                        <div class="second" style="display: flex; flex-direction: row;">
-                            <div class="input-container">
-                                <i class="fa fa-phone iconss"></i>
-                                <input class="input" type="text" placeholder="Your Phone number" name="number"
-                                    required />
+                   
+                    </div>
+                    <div class="right_subtext">
+                        <p class="subtext p_right_subtext">A warm welcome and lots of good wishes on becoming part of our growing team. We are all happy and excited about our journey together here!!</p>
+                            <div class="btn_container">
+                                <button class="btn"><a href="./signup.html" style="color: white; text-decoration: none;">Sign Up</a></button>
                             </div>
-                            <div class="input-container">
-                                <i class="fa fa-lock iconss"></i>
-                                <input class="input" type="text" id="password" placeholder="Password" name="password"
-                                    required />
-                            </div>
-                        </div>
+                       
                     </div>
-                    <div class="btn_container">
-                       <input type="submit" class="signup" value="Sign Up"/>
-                    </div>
-
-                    <div class="login_link">
-                        <p class="already_text" style="color: white;">Already an user? <a href="./login.html">Login</a></p>
-                    </div>
-                </form>
-            </div> <div class="float-right right">
-                <img src="./assets/signup.png" alt="" class="img">
+                </div>
+            </div>
+            <div class="float-right right">
+                <img src="./assets/firstpage_img.png" alt="" class="img">
             </div>
 </body>
 
