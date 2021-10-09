@@ -22,8 +22,12 @@
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
     <!--styling-->
+
     <style>
         .main-container {
             background-image: linear-gradient(#4e426d, #fff);
@@ -195,6 +199,7 @@
             transform: translateY(-7px);
         }
     </style>
+    
 </head>
 
 <body>
@@ -208,15 +213,16 @@
                 <form method="post" class="form"> <div class="input_holder">
                         <div class="input-container">
                             <i class="fa fa-user iconss"></i>
-                            <input class="input" type="text" placeholder="Username" name="username" required />
+                            <input class="input" id="email" type="email" placeholder="Email" name="email" required />
                         </div>
                         <div class="input-container">
                             <i class="fa fa-lock iconss"></i>
-                            <input class="input" type="password" placeholder="Your password" name="password" required />
+                            <input class="input" id="password" type="password" placeholder="Your password" name="password" required />
                         </div>
                     </div>
                     <div class="btn_container">
-                       <input type="submit" class="login" value="Login"/>
+                       <!-- <input type="submit" class="login" value="Login"/> -->
+                       <button id="login-btn" class="login" type="button">Login</button>
                     </div>
                     <div class="login_link">
                         <p class="already_text" style="color: white;">New here? <a href="./signup.html">Sign Up</a></p>
@@ -226,5 +232,7 @@
             <div class="float-right right">
                 <img src="./assets/login.png" alt="" class="img">
             </div>
+            <script src="./db.js"></script>
+            <script src="./login.js"></script>
 </body>
 </html>

@@ -22,7 +22,10 @@
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
     <!--styling-->
     <style>
         .main-container {
@@ -202,30 +205,31 @@
                         <div class="first" style="display: flex; flex-direction: row;">
                             <div class="input-container">
                                 <i class="fa fa-user iconss"></i>
-                                <input class="input" type="text" placeholder="Username" name="username" required />
+                                <input  id="username" class="input" type="text" placeholder="Username" name="username" required />
                             </div>
 
                             <div class="input-container">
                                 <i class="fa fa-envelope iconss"></i>
-                                <input class="input" type="text" placeholder="Your email" name="email" required />
+                                <input class="input" id ="email" type="email" placeholder="Your email" name="email" required />
                             </div>
                         </div>
 
                         <div class="second" style="display: flex; flex-direction: row;">
                             <div class="input-container">
                                 <i class="fa fa-phone iconss"></i>
-                                <input class="input" type="text" placeholder="Your Phone number" name="number"
+                                <input class="input" id="phone" type="text" placeholder="Your Phone number" name="number"
                                     required />
                             </div>
                             <div class="input-container">
                                 <i class="fa fa-lock iconss"></i>
-                                <input class="input" type="text" id="password" placeholder="Password" name="password"
+                                <input class="input" id="password" type="password" id="password" placeholder="Password" name="password"
                                     required />
                             </div>
                         </div>
                     </div>
                     <div class="btn_container">
-                       <input type="submit" class="signup" value="Sign Up"/>
+                       <!-- <input type="submit" class="signup" value="Sign Up"/> -->
+                       <button type="button"  id="signup-btn" class="signup">Sign Up</button>
                     </div>
 
                     <div class="login_link">
@@ -235,6 +239,8 @@
             </div> <div class="float-right right">
                 <img src="./assets/signup.png" alt="" class="img">
             </div>
+            <script src="./db.js"></script>
+            <script src="./signup.js"></script>
 </body>
 
 </html>
