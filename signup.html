@@ -185,6 +185,26 @@
             color: #fff;
             transform: translateY(-7px);
         }
+
+        .warning_card{
+            /* background-color: #EFAA86;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; */
+            position: fixed;
+            width: 80%;
+            height: 40%;
+            right: 550px;
+            background: rgba(110, 108, 108, 0.712);
+            /* display: none; */
+        }
+        .warning{
+            height: 50%;
+            width: 100%;
+            
+        }
     </style>
 </head>
 
@@ -200,7 +220,7 @@
                     <p class="sub_text">Chat with your loved ones!</p>
                 </div>
 
-                <form method="post" class="form" action="./login.html">
+                <form id="form" class="form" onsubmit="signup()">
                     <div class="input_holder">
                         <div class="first" style="display: flex; flex-direction: row;">
                             <div class="input-container">
@@ -228,14 +248,22 @@
                         </div>
                     </div>
                     <div class="btn_container">
-                       <!-- <input type="submit" class="signup" value="Sign Up"/> -->
-                       <button type="button"  id="signup-btn" class="signup">Sign Up</button>
+                        <input type="submit" id="sign_btn" class="signup" value="Sign Up"/>
+                       <!-- <button type="button"  id="signup-btn" class="signup">Sign Up</button> -->
                     </div>
 
                     <div class="login_link">
                         <p class="already_text" style="color: white;">Already an user? <a href="./login.html">Login</a></p>
                     </div>
                 </form>
+
+                <!-- Warning div
+                <div class="card warning_card" style="width: 18rem;">
+                    <img class="card-img-top warning" src="./assets/warning_img.png" alt="Card image cap">
+                    <div class="card-body">
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div> -->
             </div> <div class="float-right right">
                 <img src="./assets/signup.png" alt="" class="img">
             </div>

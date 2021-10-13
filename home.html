@@ -19,6 +19,10 @@
 
     <!-- Emojis -->
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
     <style>
         /* width */
         ::-webkit-scrollbar {
@@ -92,6 +96,7 @@
         .email {
             opacity: 0.5;
             color: white;
+            padding-top: 5px;
         }
 
         .profile {
@@ -187,8 +192,17 @@
         .user_name {
             margin: 0px;
             color: white;
+            display: flex;
+            width: 200%;
+
         }
 
+        .chat_with_btn{
+           background-color: #EFAA86;
+            border-radius: 20px;
+            /* margin-left: 60px; */
+            color:white;
+        }
 
         .user_img {
             width: 70px;
@@ -199,6 +213,10 @@
         .user_details {
             margin-left: 10px;
             color: whitesmoke;
+            display: flex;
+            flex: none;
+            justify-content: space-between !important;
+            flex-direction: row;
             /* padding: 0px; */
         }
 
@@ -319,8 +337,8 @@
             <div class="profile">
                 <img src="./assets/me.jpeg" alt="" class="img-circle" style="width: 60px; height: 60px;">
                 <div class="details">
-                    <p class="profile_name">Praaj</p>
-                    <p class="email">official.sasp@gmail.com</p>
+                    <p class="profile_name" id="profile_name"></p>
+                    <p class="email" id="email"></p>
                 </div>
             </div>
             <div class="container_lite">
@@ -337,24 +355,17 @@
                     </form>
                 </div>
                 <div class="users">
-                    <div class="user">
-                        <img src="./assets/user1.jpeg" alt="" class="img-circle user_img">
-                        <div class="user_details">
-                            <p class="user_name">Sidso</p>
-                            <p class="msg">This is default message wedbewyjbwe</p>
-                        </div>
-                    </div>
                 </div>
             </div>
             <button class="logout_btn"><a href="./login.html" style="text-decoration: none; color: white;">LogOut</a></button>
         </div>
-        <div class=" column right">
+        <div class=" column right" id="column_right" style="display: none;">
             <div class="user_chat">
                 <img src="./assets/user1.jpeg" alt="" class="img-circle"
                     style="width: 60px; height: 60px; margin-left: 10px; margin-right: 10px;">
                 <div class="user_input">
-                    <p class="user_name">Sidso</p>
-                    <p class="email">book4u.sasp@gmail.com</p>
+                    <p class="user_name" id="detail_user"></p>
+                    <p class="email" id="detail_email"></p>
                 </div>
             </div>
             <div class="chatting_screen">
@@ -390,6 +401,8 @@
         </div>
     </div>
     </div>
+    <script src="./db.js"></script>
+    <script src="./home.js"></script>
 </body>
 
 </html>

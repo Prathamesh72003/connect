@@ -210,19 +210,20 @@
                     <h3 class="heading_text">Welcome Back!!</h3>
                     <p class="sub_text">Chat with your loved ones!</p>
                 </div>
-                <form method="post" class="form"> <div class="input_holder">
+                <form class="form"  onsubmit="login()"> 
+                    <div class="input_holder">
                         <div class="input-container">
                             <i class="fa fa-user iconss"></i>
                             <input class="input" id="email" type="email" placeholder="Email" name="email" required />
                         </div>
                         <div class="input-container">
                             <i class="fa fa-lock iconss"></i>
-                            <input class="input" id="password" type="password" placeholder="Your password" name="password" required />
+                            <input class="input" id="password" type="password" placeholder="Your password" name="password" required/>
                         </div>
                     </div>
                     <div class="btn_container">
-                       <!-- <input type="submit" class="login" value="Login"/> -->
-                       <button id="login-btn" class="login" type="button">Login</button>
+                       <input type="submit" class="login" value="Login"/> 
+                       <!-- <button id="login-btn" class="login" type="submit" onsubmit="login()">Login</button> -->
                     </div>
                     <div class="login_link">
                         <p class="already_text" style="color: white;">New here? <a href="./signup.html">Sign Up</a></p>

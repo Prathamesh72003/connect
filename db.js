@@ -13,6 +13,6 @@ const db = firebase.firestore();
 
 db.collection('users').get().then(querySnapshot => {
     querySnapshot.forEach(doc =>{
-       // console.log(doc.data());
+       show_user(doc);
     });
 })
