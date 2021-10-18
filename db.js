@@ -11,8 +11,4 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-db.collection('users').get().then(querySnapshot => {
-    querySnapshot.forEach(doc =>{
-       show_user(doc);
-    });
-})
+
