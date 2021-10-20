@@ -279,6 +279,8 @@
         .sender_msg {
             display: flex;
             margin-bottom: 10px;
+            /* display: flex; */
+            flex-direction: column;
         }
 
         .sender_details {
@@ -288,6 +290,8 @@
             border-radius: 20px 20px 0px 20px;
             padding: 10px;
             padding-bottom: 0px;
+            margin-bottom: 10px;
+            
         }
 
         .sender_details p {
@@ -387,12 +391,13 @@
             </div>
             <div class="chatting_screen">
                 <div class="chat">
-                    <div class="sender_msg">
+                    <!-- <div class="sender_msg">
                         <div class="sender_details">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                                 has been the industry's standard dummy text ever since the 1500s</p>
                             <p class="time">4:07</p>
                         </div>
+                        
 
                     </div>
                     <div class="receiver_msg">
@@ -400,12 +405,12 @@
                             <p>Lorem Ipsum is 00s</p>
                             <p class="time">4:07</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- <div class="message"> -->
                     <div class="message">
                         <div class="input-group" id="mytextarea">
-                            <input type="text" class="form-control" placeholder="Type your message">
+                            <input type="text" class="form-control" id="message_inpuut" placeholder="Type your message">
                             <!-- <div class="input-group-btn"> -->
                                 <button class="btn btn-default send_icon" id="send_btn">
                                     <i class="glyphicon glyphicon-send"></i>
